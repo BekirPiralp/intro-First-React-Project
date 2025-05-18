@@ -9,13 +9,10 @@ export default class CategoryList extends Component {
         { Id: 1, Name: "Beverages" },
         { Id: 2, Name: "Condiments" },
       ],
-      selectedCategory: "",
+      
     };
   }
-
-  changeCategory = (category) => {
-    this.setState({ selectedCategory: category.Name });
-  };
+ 
 
   render() {
     return (
@@ -28,7 +25,7 @@ export default class CategoryList extends Component {
           {this.state.categories.map((cat) => (
             <ListGroup.Item
               key={cat.Id}
-              onClick={() => this.changeCategory(cat)}
+              onClick={() => this.props.info.changeCategory(cat)}
             >
               {cat.Name}
             </ListGroup.Item>
@@ -42,9 +39,9 @@ export default class CategoryList extends Component {
         <br />
         <br />
         <h6>
-          {this.state.selectedCategory === ""
+          {this.props.info.selectedCategory === ""
             ? ""
-            : this.state.selectedCategory + " is selected"}{" "}
+            : this.props.info.selectedCategory + " is selected"}{" "}
         </h6>
       </div>
     );

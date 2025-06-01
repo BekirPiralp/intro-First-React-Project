@@ -20,7 +20,7 @@ export default class App extends Component {
 
   render() {
     let productInfo = { title: "Category List" ,selectedCategory: this.state.selectedCategory};
-    let categoryInfo = { title: "Product List", changeCategory: this.changeCategory, selectedCategory: this.state.selectedCategory};
+    let categoryInfo = { title: "Product List", changeCategory: this.changeCategory, selectedCategory: this.state.selectedCategory, categories: this.state.categories};
     return (
       <div>
         <Container>

@@ -4,13 +4,14 @@ import { ListGroup } from "react-bootstrap";
 export default class CategoryList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    /*this.state = {
       categories: [
         { Id: 1, Name: "Beverages" },
         { Id: 2, Name: "Condiments" },
       ],
       
-    };
+    };*/
+    this.state = "" // counter şuanda var olmadığı için ve state nesnesi daha oluşmadığı için
   }
  
 
@@ -22,7 +23,7 @@ export default class CategoryList extends Component {
           <h6>{this.state.counter}</h6>
         </center>
         <ListGroup>
-          {this.state.categories.map((cat) => (
+          {this.props.info.categories.map((cat) => (
             <ListGroup.Item
               key={cat.Id}
               onClick={() => this.props.info.changeCategory(cat)}
